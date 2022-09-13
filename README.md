@@ -25,12 +25,12 @@ Users should be able to:
 
 ### Screenshot
 
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![thriving-youtiao-8bf084 netlify app_](https://user-images.githubusercontent.com/46069858/190028965-58ea0230-583e-4146-8254-d4ff880b0903.png)
+![thriving-youtiao-8bf084 netlify app_(iPhone SE)](https://user-images.githubusercontent.com/46069858/190028980-89156580-b041-487d-a07b-3d18d78978e5.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Add live site URL here](https://thriving-youtiao-8bf084.netlify.app)
 
 ## My process
 
@@ -44,6 +44,6 @@ Users should be able to:
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Emin Bilgen](https://eminbilgen.github.io)
+- Frontend Mentor - [@eminbilgen](https://www.frontendmentor.io/profile/eminbilgen)
+- Twitter - [@eminbilgen00](https://www.twitter.com/eminbilgen00)
