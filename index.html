@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+    body{
+      margin: 0;
+      padding: 0;
+      font-family: 'Overpass', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      height: 100vh;
+      width: 100vw;
+      color: #fff;
+      background-color: #141519;
+      --orange: hsl(25, 97%, 53%);
+      --light-grey: hsl(217, 12%, 63%);
+      --medium-grey: hsl(216, 12%, 54%);
+      --dark-blue: #252d37;
+      --very-dark-blue: #121417;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    .box{
+      width: 100%;
+      max-width: 500px;
+      max-height: 500px;
+      height: 100%;
+      background: rgb(47,56,69);
+      background-image: radial-gradient(circle closest-side at 50% 15%,#242b34,#252c36,#212730,#191e25,#171b21, #1a1f26);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+    }
+    .box-content{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 90%;
+      width: 90%;
+    }
+    .image{
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      background-color: #262F38;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .box-content h1{
+      font-size: 2rem;
+      height: min-content;
+      font-weight: 700;
+      margin: 0;
+    }
+    .box-content p{
+      font-size: 1.3rem;
+      font-weight: 400;
+      line-height: 30px;
+      margin: 0;
+      color: var(--light-grey);
+    }
+    .rating{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+    .rating-content{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    .rating-star{
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+      display: flex;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+      background-color: #262F38;
+      color: var(--light-grey)
+    }
+    .rating-star:hover{
+      background-color: var(--orange);
+      color: #fff;
+    }
+    .active{
+      background-color: var(--medium-grey);
+      color: #fff;
+    }
+    .btn{
+      width: 100%;
+      height: 60px;
+      border-radius: 50px;
+      background-color: var(--orange);
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      letter-spacing: 3px;
+      text-transform: uppercase;      
+    }
+    .btn:hover{
+      background-color: white;
+      color: var(--orange);
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="box-content">
+      <div class="image">
+        <img class="star" alt="star" src="images/icon-star.svg">
+      </div>
+      <h1>How did we do?</h1>
+      <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+      <div class="rating">
+        <div class="rating-content">
+          <div class="rating-star" id="star1">
+            1
+          </div>
+          <div class="rating-star" id="star2">
+            2
+          </div>
+          <div class="rating-star" id="star3">
+            3
+          </div>
+          <div class="rating-star" id="star4">
+            4
+          </div>
+          <div class="rating-star" id="star5">
+            5
+          </div>
+        </div>
+    </div>
+    <button class="btn" id="btn">Submit</button>
+  </div>
+  <!-- You selected Add rating here  out of 5
+
+  Thank you!
+
+  We appreciate you taking the time to give a rating. If you ever need more support, 
+  don’t hesitate to get in touch! -->
+  <script>
+    /*function getElement(id) {
+      return document.getElementById(id);
+    }
+    const stars = [
+      getElement('star1'),
+      getElement('star2'),
+      getElement('star3'),
+      getElement('star4'),
+      getElement('star5')
+    ];
+    stars[0].addEventListener('click', function() {
+      stars[0].classList.add('active');
+    });
+    */
+    const stars = document.querySelectorAll('.rating-star');
+    let rating = 0;
+    stars.forEach((star, index) => {
+      star.addEventListener('click', () => {
+        rating = index + 1;
+        stars.forEach((star, index) => {
+          if (index < rating) {
+            star.classList.add('active');
+          } else {
+            star.classList.remove('active');
+          }
+        });
+      });
+    });
+
+    document.getElementById('btn').addEventListener('click', () => {
+      alert(`You rated ${rating} stars`);
+    })
+  </script>
+</body>
+</html>
