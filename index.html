@@ -36,8 +36,15 @@
       max-width: 500px;
       max-height: 500px;
       height: 100%;
-      background: rgb(47,56,69);
-      background-image: radial-gradient(circle closest-side at 50% 15%,#242b34,#252c36,#212730,#191e25,#171b21, #1a1f26);
+      background: hsla(213, 20%, 18%, 1);
+      background: radial-gradient(
+        circle,
+        hsla(213, 20%, 18%, 1) 18%,
+        hsla(215, 21%, 12%, 1) 50%,
+        hsla(215, 21%, 11%, 1) 100%
+      );
+      background-position: 44% 94%;
+      background-size: 200% 250%;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -234,7 +241,7 @@
           </div>
         </div>
     </div>
-    <button class="btn" id="btn">Submit</button>
+    <button class="btn" id="btn" disabled>Submit</button>
   </div>
   <script>
     // variables
@@ -262,6 +269,7 @@
           which = star.id;
           star.classList.add('active');
           rate = star.innerText;
+          getElement('btn').removeAttribute('disabled');
         }
         else{
           // if clicked again, remove active class star
@@ -269,6 +277,7 @@
             isClicked = false;
             star.classList.remove('active');
             rate = 0;
+            getElement('btn').setAttribute('disabled', 'disabled');
           }
           else{
             which = star.id;
@@ -277,13 +286,14 @@
               star.classList.remove('active');
             });
             star.classList.add('active');
+            getElement('btn').removeAttribute('disabled');
           }
         }
       });
     });
     getElement('btn').addEventListener('click', function(){
       if(rate === 0){
-        alert('Please select a rating');
+        // nothing
       }else{
         getElement('box-content').style.justifyContent = 'center';
         getElement('box-content').innerHTML = `
