@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://thriving-youtiao-8bf084.netlify.app)
+- Live Site URL: [Netlify Deploy](https://thriving-youtiao-8bf084.netlify.app)
 
 ## My process
 
